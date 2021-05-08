@@ -43,163 +43,73 @@ a:hover
 
 hr {
   width: 5%;
-
-      border-bottom: 0;
-      border-left: 0;
-      border-right: 0;
-      border-top: 6px dotted #d4d4d4;
-    }
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 6px dotted #d4d4d4;
+  }
 
 
 /*********CLASS selectors*******/
 .masterContainer{
   display: flex;
-}
-.sideBar{
-  width: 15vw;
   height: 100vh;
-  position: fixed;
-  background-color: white;
-  color: #8f8f8f;
-}
-.picContainer{
-  height: 30vh;
-    background-color: #4a8bbc;
-}
-.navMenu{
-  list-style-type: none;
-  height: 30vh;
-  margin-top: 20vh;
-  text-align: left;
-  display: grid;
-}
-.viewWindow{
-  margin-left: 15vw
-}
-.top-container {
   background-color: #b7d6d2;
-  height: 30vh;
+  background-size: cover;
 }
 
-.middle-container {
-  background-color: #608793;
-  padding-bottom: 55px;
-}
-
-.about-me
-{
-  width: 53%;
-  margin: 20px auto 50px auto;
-  text-align: justify;
-}
-
-.bottom-container {
-  background-color: #66BFBF;
-  padding-top: 35px;
-  padding-bottom: 35px;
-
-}
-
-.Pro {
-  text-decoration: underline;
-}
-
-.profile-picture
-{
-  width: 100px;
-  margin-top: 50px;
-  border-radius: 50px;
-}
-.top-cloud {
-  position: relative;
-  left: 215px;
-}
-
-.bottom-cloud {
+.gameWindow{
+  width:80vw;
+  margin: 0 auto;
   position: absolute;
-  left: 315px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
 }
 
-.mountain {
-  height: 300px;
+
+
+.buttonsContainer{
+text-align-last: justify;
 }
 
-.tek-skills {
-  width: 25%;
-  float: left;
-  margin-right: 30px;
+#rocket{
+  width: 40px;
+  bottom: 0;
+  margin-top: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+
+}
+/* #about {
+    position: absolute;
+    left: 140px;
+    top: 150px;
+}
+#Skills {
+    position: absolute;
+    left: 440px;
+    top: 150px;
+} */
+
+  .buttons {
+    /* padding: 40px 40px; */
+    width: 95px;
+    height: 95px;
+    border-radius: 50px;
+    background-color: #6a6a85;
+    border: none;
+    text-align-last: center;
+    color: white;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgb(120 20 158 / 82%) 0%, rgb(82 4 76 / 53%) 35%, rgb(0 0 0) 100%);
 }
 
-.acc-man-skills {
-  width: 25%;
-  float: right;
-  margin-left: 30px;
-}
-
-.m-skills {
-  width: 25%;
-  float: left;
-  margin-right: 30px;
-}
-
-.ceo-skills {
-  width: 25%;
-  float: right;
-  margin-left: 30px;
-}
-
-.skill-row {
-  width: 50%;
-  margin: 100px auto 100px auto;
-  text-align: left;
-  line-height: 2;
-}
-
-.contact-me
-{
-  padding: 10px;
-}
-
-.BUTTON_JXO {
-  background: #3D94F6;
-  background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
-  background-image: -moz-linear-gradient(top, #3D94F6, #1E62D0);
-  background-image: -ms-linear-gradient(top, #3D94F6, #1E62D0);
-  background-image: -o-linear-gradient(top, #3D94F6, #1E62D0);
-  background-image: linear-gradient(to bottom, #3D94F6, #1E62D0);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 14px;
-  color: #FFFFFF;
-  font-family: Open Sans;
-  font-size: 16px;
-  font-weight: 100;
-  padding: 7px 15px;
-  text-shadow: 1px 1px 20px #000000;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  text-align: center;
-  margin: 25px auto 0 auto;
-}
-
-.BUTTON_JXO:hover {
-  background: #D01E95;
-  border: solid #337FED 1px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  text-decoration: none;
-}
-
-.links
-{
-  width: 50%;
-  margin: 0 auto 35px auto;
-}
-.copyright
-{
-  margin: 10px auto 10px auto;
-  font-size: 10px;
-  font-family: serif;
+.buttons:hover{
+  background-color: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(232 0 243) 100%);
 }
