@@ -6,25 +6,37 @@
   <title>Damian Lonel</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Montserrat:wght@300&family=Sacramento&display=swap&family=Lato&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Rubik&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
 </head>
 
-<body onload = followMouse();>
+<body>
 
-  <div class="masterContainer" style="background-image: url('https://wallpapercave.com/wp/wp5921640.jpg');">
-    <div class="gameWindow">
-      <div class="buttonsContainer">
-        <button class="buttons" id="about">About</button>
-        <button class="buttons" id="Skills">Skills</button>
-        <button class="buttons" id="Projects">Projects</button>
-        <button class="buttons" id="Employment">Employment</button>
-        <button class="buttons" id="Extras">Extras</button>
-      </div>
-
-      <img id="rocket" src="images/001-rocket.svg" alt="">
-
-    </div>
+  <div class="sideNav">
+    <h3 id="myName">Damian Lonel</h3>
+    <img class="avatar" src="images/avatar.svg" alt="">
+    <ul class="navList">
+      <li>Web and Software designer</li>
+      <li>Software consultation</li>
+      <li>Solutions Implementation</li>
+    </ul>
+    <p>
+      <bold>Contact Information:</bold>
+    </p>
   </div>
+
+  <div id="gamesWindow" class="gameWindow">
+    <div class="rocketDiv" id="rocket"></div>
+    <!-- <img id="rocket" src="images/001-rocket.svg" alt=""> -->
+
+    <div id="missiles"></div>
+
+    <div id="enemies"></div>
+    <!-- <a href="#" alt="none" onclick="ani()">About</a> -->
+
+  </div>
+
 
   <script src="index.js" charset="utf-8"></script>
 </body>
