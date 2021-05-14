@@ -50,7 +50,7 @@ a:hover {
   bottom: 0;
 }
 #gamesWindow{
-  background-image: url('https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+  background-size: cover;
 }
 /* .buttonsContainer {
   text-align-last: justify;
@@ -72,7 +72,7 @@ a:hover {
 #missiles{
   height:100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
 }
 .missile{
   width: 10px;
@@ -81,23 +81,7 @@ a:hover {
  position: absolute;
 }
 
-/* #enemy1Div {
-  position: absolute;
-  top: 20em;
-  left: 15em;
-} */
-
-/* .enemiesDiv a {
-  text-decoration: none;
-  font-size: .8rem;
-} */
-
-/* #enemies{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-} */
-#enemies{
+#enemies1{
   width: 50px;
   height: 51px;
   background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620879999/002-alien_r5rjpe_1_gk4btj.svg');
@@ -105,10 +89,74 @@ a:hover {
   left: 27%;
   top: 55%;
 }
-
-/* .enemy{
+#speech1{
   width: 50px;
   height: 51px;
-  background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620879999/002-alien_r5rjpe_1_gk4btj.svg');
   position: absolute;
-} */
+  left: 27%;
+  top: 55%;
+  opacity: 0;
+}
+#speech1:hover{
+  opacity: 1;
+}
+
+#enemies2{
+  width: 50px;
+  height: 51px;
+  background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620800436/005-alien-3_m5rku2.svg');
+  position: absolute;
+  /* left: 15%;*/
+  top: 15%;
+}
+#speech2{
+  width: 50px;
+  height: 51px;
+  position: absolute;
+  /* left: 27%; */
+  top: 14%;
+  opacity: 0;
+}
+#speech2:hover{
+  opacity: 1;
+}
+
+#enemies3{
+  width: 50px;
+  height: 51px;
+  background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620969182/004-alien-2_nnmnee50px_lilrn7.svg');
+  position: absolute;
+  left: 80%;
+  top: 15%;
+}
+#speech3{
+  width: 50px;
+  height: 51px;
+  position: absolute;
+  left: 80%;
+  top: 15%;
+  opacity: 0;
+}
+#speech3:hover{
+  opacity: 1;
+}
+
+#enemies4{
+  width: 50px;
+  height: 51px;
+  background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620969277/003-alien-1_p4ynj650px_ivjwsj.svg');
+  position: absolute;
+  left: 80%;
+  top: 15%;
+}
+#speech4{
+  width: 50px;
+  height: 51px;
+  position: absolute;
+  left: 80%;
+  top: 75%;
+  opacity: 0;
+}
+#speech4:hover{
+  opacity: 1;
+}

@@ -32,39 +32,6 @@ window.onload = function() {
   document.body.onmousemove = followCursor.run;
 }
 
-
-//   var followCursor = (
-//
-//   function() {
-//   var s = document.getElementById('rocket');
-//   // s.style.position = 'absolute';
-//
-//   return {
-//     init: function() {
-//       document.body.appendChild(s);
-//     },
-//
-//     run: function(e) {
-//
-//       var e = e || window.event;
-//       // console.log(e.clientX)
-//       // console.log(window.width)
-//       var gameWind = document.getElementById('gamesWindow');
-//       var gameWidth = gameWind.width;
-//       console.log(gameWidth);
-//       s.style.left = (e.clientX / 10) + '%';
-//       // s.style.top = (e.clientY - 5) + 'px';
-//       // getMouseCoords(e);
-//       rocketCoordLeft.push(s.style.left);
-//     }
-//   };
-// }());
-//
-// window.onload = function() {
-//   followCursor.init();
-//   document.body.onmousemove = followCursor.run;
-// }
-
 document.onkeydown = function(e) {
   if (e.keyCode === 32) {
     var getRocket = document.getElementById('rocket');
@@ -76,13 +43,7 @@ document.onkeydown = function(e) {
     drawMissiles()
     console.log(missiles)
   }
-  // drawRocket();
 };
-
-// function drawRocket() {
-//   document.getElementById('rocket').style.left = rocket.left + '%';
-//   document.getElementById('rocket').style.bottom = rocket.bottom + '%';
-// };
 
 function drawMissiles() {
   document.getElementById('missiles').innerHTML = "";
@@ -103,83 +64,239 @@ function moveMissiles() {
   }
 };
 
-// function drawEnemies(){
-//   document.getElementById('enemies').innerHTML = "";
-//   for(var enemy = 0; enemy < enemies.length; enemy = enemy + 1){
-//     document.getElementById('enemies').innerHTML += `<div class='enemy' style='left:${enemies[enemy].left}%; top:${enemies[enemy].top}%;'></div>`;
-//   }
-// };
-
-// function moveEnemiesRight(){
-//   for(var enemy = 0; enemy < enemies.length; enemy = enemy + 1){
-//     enemies[enemy].left = enemies[enemy].left + 3;
-//   }
-// };
-//
-// function moveEnemiesDown(){
-//   for(var enemy = 0; enemy < enemies.length; enemy = enemy + 1){
-//   enemies[enemy].top = enemies[enemy].top + 2;
-// }
-// };
-
 function gameLoop() {
   setTimeout(gameLoop, 50),
     moveMissiles();
   drawMissiles();
-  // drawEnemies();
-  // moveEnemiesRight();
-  // moveEnemiesDown();
-  // collisionDetection();
 };
 
 gameLoop();
 
-var theEnemy = document.getElementById('enemies');
-var currentLeftPos = 27;
-var currentTopPos = 55;
+
+//ENEMIES
+//enemy 1
+var theEnemy1 = document.getElementById('enemies1');
+var currentLeftPos1 = 27;
+var currentTopPos1 = 55;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.msRequestAnimationFrame;
 
-function moveEnemyRight() {
-  currentLeftPos += .1;
-  theEnemy.style.left = currentLeftPos + "%";
-  if (Math.abs(currentLeftPos) >= 37) {
-    currentLeftPos = 27;
+function moveEnemy1() {
+  currentLeftPos1 += .04;
+  theEnemy1.style.left = currentLeftPos1 + "%";
+  if (Math.abs(currentLeftPos1) >= 37) {
+    currentLeftPos1 = 27;
 
   }
-  currentTopPos += .1;
-  theEnemy.style.top = currentTopPos + "%";
-  if (Math.abs(currentTopPos) >= 65) {
+  currentTopPos1 += .04;
+  theEnemy1.style.top = currentTopPos1 + "%";
+  if (Math.abs(currentTopPos1) >= 65) {
 
-    currentTopPos = 55;
+    currentTopPos1 = 55;
   }
-  requestAnimationFrame(moveEnemyRight);
+  requestAnimationFrame(moveEnemy1);
 
 };
-moveEnemyRight();
 
-// function moveEnemyDown(){
-//   currentTopPos += .1;
-//   theEnemy.style.top = currentTopPos + "%";
-//   if(Math.abs(currentTopPos) >= 65){
-//
-//     window.cancelAnimationFrame()
-//   }
-//   requestAnimationFrame(moveEnemyDown);
-// };
-//
-// moveEnemyDown();
-// function getMouseCoords(e) {
-//   var e = e || window.event;
-//   document.getElementById('msg').innerHTML = e.clientX + ', ' +
-//     e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
-// }
-//
+moveEnemy1();
+//moveSpeech1
+var speechBubble1 = document.getElementById('speech1');
+var currentLeftPosSpeech1 = 28;
+var currentTopPosSpeech1 = 53;
 
-//
-// function ani(){
-//     document.getElementById('shooter').className ='shoot';
-//   }
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveSpeech1() {
+  currentLeftPosSpeech1 += .04;
+  speechBubble1.style.left = currentLeftPosSpeech1 + "%";
+  if (Math.abs(currentLeftPosSpeech1) >= 38) {
+    currentLeftPosSpeech1 = 28;
+
+  }
+  currentTopPosSpeech1 += .04;
+  speechBubble1.style.top = currentTopPosSpeech1 + "%";
+  if (Math.abs(currentTopPosSpeech1) >= 63) {
+
+    currentTopPosSpeech1 = 53;
+  }
+  requestAnimationFrame(moveSpeech1);
+
+};
+moveSpeech1();
+
+//enemy2
+
+var theEnemy2 = document.getElementById('enemies2');
+var currentLeftPos2 = 15;
+var currentTopPos2 = 15;
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveEnemy2() {
+  currentLeftPos2 += .04;
+  theEnemy2.style.left = currentLeftPos2 + "%";
+  if (Math.abs(currentLeftPos2) >= 37) {
+    currentLeftPos2 = 15;
+  }
+  // currentTopPos2 += .04;
+  // theEnemy2.style.top = currentTopPos2 + "%";
+  // if (Math.abs(currentTopPos2) >= 65) {
+  //
+  //   currentTopPos2 = 55;
+  // }
+  requestAnimationFrame(moveEnemy2);
+
+};
+
+moveEnemy2();
+
+//speech2
+var speechBubble2 = document.getElementById('speech2');
+var currentLeftPosSpeech2 = 14;
+var currentTopPosSpeech2 = 15;
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveSpeech2() {
+  currentLeftPosSpeech2 += .04;
+  speechBubble2.style.left = currentLeftPosSpeech2 + "%";
+  if (Math.abs(currentLeftPosSpeech2) >= 36) {
+    currentLeftPosSpeech2 = 14;
+
+  }
+  // currentTopPosSpeech2 += .04;
+  // speechBubble2.style.top = currentTopPosSpeech2 + "%";
+  // if (Math.abs(currentTopPosSpeech2) >= 63) {
+  //
+  //   currentTopPosSpeech2 = 53;
+  // }
+  requestAnimationFrame(moveSpeech2);
+
+};
+moveSpeech2();
+
+//enemy3
+
+var theEnemy3 = document.getElementById('enemies3');
+var currentLeftPos3 = 80;
+var currentTopPos3 = 15;
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveEnemy3() {
+  currentLeftPos3 -= .04;
+  theEnemy3.style.left = currentLeftPos3 + "%";
+  if (Math.abs(currentLeftPos3) <= 54) {
+    currentLeftPos3 = 80;
+  };
+  currentTopPos3 += .04;
+  theEnemy3.style.top = currentTopPos3 + "%";
+  if (Math.abs(currentTopPos3) <= 55) {
+
+    currentTopPos3 = 15;
+  }
+  requestAnimationFrame(moveEnemy3);
+
+};
+
+moveEnemy3();
+
+//speech3
+var speechBubble3 = document.getElementById('speech3');
+var currentLeftPosSpeech3 = 81;
+var currentTopPosSpeech3 = 15;
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveSpeech3() {
+  currentLeftPosSpeech3 -= .04;
+  speechBubble3.style.left = currentLeftPosSpeech3 + "%";
+  if (Math.abs(currentLeftPosSpeech3) <= 55) {
+    currentLeftPosSpeech3 = 81;
+
+  }
+  currentTopPosSpeech3 += .04;
+  speechBubble3.style.top = currentTopPosSpeech3 + "%";
+  if (Math.abs(currentTopPosSpeech3) <= 63) {
+
+    currentTopPosSpeech3 = 15;
+  }
+  requestAnimationFrame(moveSpeech3);
+
+};
+moveSpeech3();
+
+//enemy4
+
+var theEnemy4 = document.getElementById('enemies4');
+var currentLeftPos4 = 80;
+var currentTopPos4 = 75;
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveEnemy4() {
+  currentLeftPos4 -= .04;
+  theEnemy4.style.left = currentLeftPos4 + "%";
+  if (Math.abs(currentLeftPos4) <= 65) {
+    currentLeftPos4 = 80;
+  };
+  currentTopPos4 -= .04;
+  theEnemy4.style.top = currentTopPos4 + "%";
+  if (Math.abs(currentTopPos4) <= 55) {
+
+    currentTopPos4 = 75;
+  }
+  requestAnimationFrame(moveEnemy4);
+
+};
+
+moveEnemy4();
+
+//speech4
+var speechBubble4 = document.getElementById('speech4');
+var currentLeftPosSpeech4 = 79;
+var currentTopPosSpeech4 = 74;
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+function moveSpeech4() {
+  currentLeftPosSpeech4 -= .04;
+  speechBubble4.style.left = currentLeftPosSpeech4 + "%";
+  if (Math.abs(currentLeftPosSpeech4) <= 64) {
+    currentLeftPosSpeech4 = 79;
+
+  }
+  currentTopPosSpeech4 -= .04;
+  speechBubble4.style.top = currentTopPosSpeech4 + "%";
+  if (Math.abs(currentTopPosSpeech4) <= 54) {
+
+    currentTopPosSpeech4 = 74;
+  }
+  requestAnimationFrame(moveSpeech4);
+
+};
+moveSpeech4();
