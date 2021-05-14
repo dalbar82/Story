@@ -1,49 +1,43 @@
 var rocket = {
-  bottom: 0,
-  left: 50
+  bottom: 10,
+  left: 0
 };
 
 var missiles = [];
 
-var enemies = [{
-    left: 10,
-    top: 10
-  },
-  {
-    left: 30,
-    top: 10
-  },
-  {
-    left: 40,
-    top: 10
-  },
-  {
-    left: 50,
-    top: 10
-  },
-];
+var followCursor = (
 
-// function moveEnemyDown(){
-//   currentTopPos += .1;
-//   theEnemy.style.top = currentTopPos + "%";
-//   if(Math.abs(currentTopPos) >= 65){
-//
-//     window.cancelAnimationFrame()
-//   }
-//   requestAnimationFrame(moveEnemyDown);
-// };
-//
-// moveEnemyDown();
-// function getMouseCoords(e) {
-//   var e = e || window.event;
-//   document.getElementById('msg').innerHTML = e.clientX + ', ' +
-//     e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
-// }
-//
+  function() {
+    var s = document.getElementById('rocket');
+    // Container and displays
+    const container = document.querySelector(".gameWindow");
+
+    return {
+      init: function() {
+        document.body.appendChild(s);
+      },
+      run: function(e) {
+        // On mousemove
+        container.addEventListener("mousemove", (e) => {
+          // Do math
+          xPercent = parseInt(e.pageX / window.innerWidth * 100);
+          s.style.left = (xPercent) + '%';
+        });
+      }
+    };
+  }());
+
+window.onload = function() {
+  followCursor.init();
+  document.body.onmousemove = followCursor.run;
+}
+
+
 //   var followCursor = (
+//
 //   function() {
 //   var s = document.getElementById('rocket');
-//   s.style.position = 'absolute';
+//   // s.style.position = 'absolute';
 //
 //   return {
 //     init: function() {
@@ -51,10 +45,17 @@ var enemies = [{
 //     },
 //
 //     run: function(e) {
+//
 //       var e = e || window.event;
-//       s.style.left = (e.clientX - 10) + 'px';
+//       // console.log(e.clientX)
+//       // console.log(window.width)
+//       var gameWind = document.getElementById('gamesWindow');
+//       var gameWidth = gameWind.width;
+//       console.log(gameWidth);
+//       s.style.left = (e.clientX / 10) + '%';
 //       // s.style.top = (e.clientY - 5) + 'px';
-//       getMouseCoords(e);
+//       // getMouseCoords(e);
+//       rocketCoordLeft.push(s.style.left);
 //     }
 //   };
 // }());
@@ -64,44 +65,41 @@ var enemies = [{
 //   document.body.onmousemove = followCursor.run;
 // }
 
-
 document.onkeydown = function(e) {
-
-  if (e.keyCode === 37) {
-    console.log('left');
-    rocket.left = rocket.left - 1;
-
-    // moveHero();
-  } else if (e.keyCode === 39) {
-    console.log('right');
-    rocket.left = rocket.left + 1;
-    // moveHero();
-  } else if (e.keyCode === 32) {
+  if (e.keyCode === 32) {
+    var getRocket = document.getElementById('rocket');
+    var leftValue = getRocket.style.left;
     missiles.push({
-      left: rocket.left + 2,
-      bottom: rocket.bottom + 1
+      left: parseInt(leftValue, 10) - 18,
+      bottom: rocket.bottom
     });
     drawMissiles()
+    console.log(missiles)
   }
-  drawRocket();
+  // drawRocket();
 };
 
-function drawRocket() {
-  document.getElementById('rocket').style.left = rocket.left + '%';
-  document.getElementById('rocket').style.bottom = rocket.bottom + '%';
-};
+// function drawRocket() {
+//   document.getElementById('rocket').style.left = rocket.left + '%';
+//   document.getElementById('rocket').style.bottom = rocket.bottom + '%';
+// };
 
 function drawMissiles() {
   document.getElementById('missiles').innerHTML = "";
   for (var missile = 0; missile < missiles.length; missile = missile + 1) {
-    document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}%; bottom:${missiles[missile].bottom}%;'></div>`;
-
+    document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}%; bottom:${missiles[missile].bottom}px;'></div>`;
   }
 };
 
 function moveMissiles() {
   for (var missile = 0; missile < missiles.length; missile = missile + 1) {
-    missiles[missile].bottom = missiles[missile].bottom + 5;
+
+    if (Math.abs(missiles[missile].bottom) <= 1100) {
+      missiles[missile].bottom = missiles[missile].bottom + 20;
+    } else {
+      missiles[missile].bottom = 1150;
+
+    }
   }
 };
 
@@ -163,6 +161,23 @@ function moveEnemyRight() {
 };
 moveEnemyRight();
 
+// function moveEnemyDown(){
+//   currentTopPos += .1;
+//   theEnemy.style.top = currentTopPos + "%";
+//   if(Math.abs(currentTopPos) >= 65){
+//
+//     window.cancelAnimationFrame()
+//   }
+//   requestAnimationFrame(moveEnemyDown);
+// };
+//
+// moveEnemyDown();
+// function getMouseCoords(e) {
+//   var e = e || window.event;
+//   document.getElementById('msg').innerHTML = e.clientX + ', ' +
+//     e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
+// }
+//
 
 //
 // function ani(){
