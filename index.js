@@ -64,13 +64,7 @@ function moveMissiles() {
   }
 };
 
-function gameLoop() {
-  setTimeout(gameLoop, 50),
-    moveMissiles();
-  drawMissiles();
-};
 
-gameLoop();
 
 
 //ENEMIES
@@ -293,10 +287,65 @@ function moveSpeech4() {
   currentTopPosSpeech4 -= .04;
   speechBubble4.style.top = currentTopPosSpeech4 + "%";
   if (Math.abs(currentTopPosSpeech4) <= 54) {
-
     currentTopPosSpeech4 = 74;
   }
+
   requestAnimationFrame(moveSpeech4);
 
 };
 moveSpeech4();
+
+
+
+function collisionDetection1(){
+    var enemiesFirst = document.getElementById('enemies1');
+    for(var missile = 0; missile < missiles.length; missile = missile + 1){
+      if(
+        (missiles[missile].top <= enemiesFirst.top + '%') &&
+        (missiles[missile].top >= enemiesFirst.top + '%') &&
+        (missiles[missile].left >= enemiesFirst.left) &&
+        (missiles[missile].left <= enemiesFirst.left)
+      ){
+        console.log("hello");
+        enemiesFirst.style.display = "none";
+        // missiles.splice(missile, 1);
+      }
+}
+};
+
+
+function gameLoop() {
+  setTimeout(gameLoop, 50),
+    moveMissiles();
+  drawMissiles();
+  collisionDetection1();
+};
+
+gameLoop();
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("enemies2");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

@@ -24,37 +24,47 @@ a:hover {
   text-align: center;
 }
 
-.navList{
+.navList {
   text-align: left;
-  font-family: 'rubik mono one';
-  font-size: .6em;
+  font-family: 'Raleway Dots';
+  font-size: 0.8em;
   line-height: 4em;
 }
 
-#myName{
+#myName {
   font-family: 'Raleway Dots', cursive;
   font-size: 2em;
   font-weight: 100;
 }
 
-.avatar{
+.avatar {
   width: 100px;
   border-radius: 50px;
 }
 
 .gameWindow {
-  height:100vh;
+  height: 100vh;
   width: 80vw;
   left: 20vw;
   position: absolute;
   bottom: 0;
 }
-#gamesWindow{
+
+#gamesWindow {
   background-size: cover;
 }
+
 /* .buttonsContainer {
   text-align-last: justify;
 } */
+.topTextContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-family: 'rubik mono one';
+  position: relative;
+  top: 1%;
+}
 
 #rocket {
   width: 50px;
@@ -64,24 +74,25 @@ a:hover {
   left: 0;
   bottom: 0;
   /* width: 40px; */
-
   /* animation-name: revolve;
   animation-duration: 2s;
   animation-iteration-count: infinite; */
 }
-#missiles{
-  height:100vh;
+
+#missiles {
+  height: 100vh;
   width: 100vw;
   position: fixed;
 }
-.missile{
+
+.missile {
   width: 10px;
   height: 28px;
   background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620802609/missile2_fboh7e.png');
- position: absolute;
+  position: absolute;
 }
 
-#enemies1{
+#enemies1 {
   width: 50px;
   height: 51px;
   background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620879999/002-alien_r5rjpe_1_gk4btj.svg');
@@ -89,7 +100,8 @@ a:hover {
   left: 27%;
   top: 55%;
 }
-#speech1{
+
+#speech1 {
   width: 50px;
   height: 51px;
   position: absolute;
@@ -97,11 +109,12 @@ a:hover {
   top: 55%;
   opacity: 0;
 }
-#speech1:hover{
+
+#speech1:hover {
   opacity: 1;
 }
 
-#enemies2{
+#enemies2 {
   width: 50px;
   height: 51px;
   background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620800436/005-alien-3_m5rku2.svg');
@@ -109,7 +122,8 @@ a:hover {
   /* left: 15%;*/
   top: 15%;
 }
-#speech2{
+
+#speech2 {
   width: 50px;
   height: 51px;
   position: absolute;
@@ -117,11 +131,12 @@ a:hover {
   top: 14%;
   opacity: 0;
 }
-#speech2:hover{
+
+#speech2:hover {
   opacity: 1;
 }
 
-#enemies3{
+#enemies3 {
   width: 50px;
   height: 51px;
   background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620969182/004-alien-2_nnmnee50px_lilrn7.svg');
@@ -129,7 +144,8 @@ a:hover {
   left: 80%;
   top: 15%;
 }
-#speech3{
+
+#speech3 {
   width: 50px;
   height: 51px;
   position: absolute;
@@ -137,11 +153,12 @@ a:hover {
   top: 15%;
   opacity: 0;
 }
-#speech3:hover{
+
+#speech3:hover {
   opacity: 1;
 }
 
-#enemies4{
+#enemies4 {
   width: 50px;
   height: 51px;
   background-image: url('https://res.cloudinary.com/dck5uyfgr/image/upload/v1620969277/003-alien-1_p4ynj650px_ivjwsj.svg');
@@ -149,7 +166,8 @@ a:hover {
   left: 80%;
   top: 15%;
 }
-#speech4{
+
+#speech4 {
   width: 50px;
   height: 51px;
   position: absolute;
@@ -157,6 +175,119 @@ a:hover {
   top: 75%;
   opacity: 0;
 }
-#speech4:hover{
+
+#speech4:hover {
   opacity: 1;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #24CBAD;
+  /* background-color: #f0c41a; */
+  padding: 0px 40px;
+
+  width: 65%;
+  height: 80%;
+  position: absolute;
+  left: 25%;
+  top: 10%;
+}
+
+/* The Close Button */
+.close {
+  width: 30px;
+  height: 30px;
+  color: white;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 15px;
+}
+
+.close:hover {
+  color: gray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#projectsH1 {
+  font-family: 'rubik', cursive;
+  border-bottom: .1em solid white;
+}
+
+.jobForge {
+  display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.songSaviour{
+  display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  margin-top: 1.5em;
+}
+
+.imageBox {
+margin-top: 5px;
+}
+
+#SSimage {
+  width: 30vw;
+  box-shadow: 0px 0px 0px 7px #282828;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  font-family: 'poppins', monospace;
+  font-size: .8em;
+  margin-left: 50px;
+
+}
+
+.textBox h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.textBox p {
+  margin: 3px;
+  text-align: initial;
+}
+
+#jfList {
+  text-align: left;
+    margin: 0;
+    padding-inline-start: 18px;
 }

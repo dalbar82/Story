@@ -24,11 +24,71 @@
     <p>
       <bold>Contact Information:</bold>
     </p>
-    <div id="posX"></div>
-    <div id="posY"></div>
+
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modalHead">
+        <h1 id="projectsH1">PROJECTS</h1>
+        <span class="close">&times;</span>
+        </div>
+
+        <div class="modalColumns">
+
+
+          <div class="jobForge">
+
+            <div class="imageBox">
+              <img id="SSimage" src="images/JFscreen.png" alt="Song Saviour image">
+            </div>
+            <div class="textBox">
+              <h2>JOB FORGE</h2>
+              <p>A cloud based job management system intergrating:</p>
+              <ul id='jfList'>
+                <li>CRM</li>
+                <li>Quoting, Orders and Invoicing</li>
+                <li>Product Templates for fast and accurate pricing</li>
+                <li>Inventory Management</li>
+                <li>Cost Analysis - Fast, job based P&L reports</li>
+                <li>Staff management - Work orders, site details, phone app </li>
+              </ul>
+              <p><em>Built using Knack DB backend developer, custom CSS and JS</em></p>
+            </div>
+          </div>
+
+          <div class="songSaviour">
+
+            <div class="imageBox">
+              <img id="SSimage" src="images/SSscreen.png" alt="Song Saviour image">
+            </div>
+            <div class="textBox">
+              <h2>SONG SAVIOUR</h2>
+              <p>This is a Marketplace app built to buy and sell songs.</p>
+              <p>Not to be confused with a streaming service, with Song Saviour, song writers/producers/composers have the ability to sell their works outright to an artist looking for ‘original’ material.
+Either purchase the full copyright and IP of a song, or sign into to a royalty share contract. </p>
+              <p><em>Built using Ruby, Ruby on Rails, HTML, CSS and JS</em></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <div id="gamesWindow" class="gameWindow" style="background-image: url('https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');">
+    <div class="topTextContainer">
+      <h3 class="click">Click to follow link</h3>
+      <h3 class="spacebar">Spacebar to fire!</h3>
+    </div>
+
     <div class="rocketDiv" id="rocket"></div>
     <!-- <img id="rocket" src="images/001-rocket.svg" alt=""> -->
 
@@ -54,7 +114,10 @@
       <img id="speech4" src="images/pixel-speech-bubble (4).png" alt="">
     </div>
 
+
+
   </div>
+
 
 
   <script src="index.js" charset="utf-8"></script>
