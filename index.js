@@ -1,3 +1,6 @@
+
+
+//SPACE INVADERS GAME
 var rocket = {
   bottom: 10,
   left: 0
@@ -48,30 +51,32 @@ document.onkeydown = function(e) {
 function drawMissiles() {
   document.getElementById('missiles').innerHTML = "";
   for (var missile = 0; missile < missiles.length; missile = missile + 1) {
-    document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}%; bottom:${missiles[missile].bottom}px;'></div>`;
+    document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}%; bottom:${missiles[missile].bottom}%;'></div>`;
   }
 };
 
 function moveMissiles() {
   for (var missile = 0; missile < missiles.length; missile = missile + 1) {
 
-    if (Math.abs(missiles[missile].bottom) <= 1100) {
-      missiles[missile].bottom = missiles[missile].bottom + 20;
+    if (Math.abs(missiles[missile].bottom) <= 100) {
+      missiles[missile].bottom = missiles[missile].bottom + 5;
     } else {
-      missiles[missile].bottom = 1150;
+      missiles[missile].bottom = 110;
 
     }
   }
 };
 
-
+function rotationCalculator() {
+  theEnemy2.style.transform = theEnemy2.style.transform + 5 + "deg";
+};
 
 
 //ENEMIES
 //enemy 1
 var theEnemy1 = document.getElementById('enemies1');
 var currentLeftPos1 = 27;
-var currentTopPos1 = 55;
+var currentBottomPos1 = 45;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -85,11 +90,11 @@ function moveEnemy1() {
     currentLeftPos1 = 27;
 
   }
-  currentTopPos1 += .04;
-  theEnemy1.style.top = currentTopPos1 + "%";
-  if (Math.abs(currentTopPos1) >= 65) {
+  currentBottomPos1 += .04;
+  theEnemy1.style.bottom = currentBottomPos1 + "%";
+  if (Math.abs(currentBottomPos1) >= 55) {
 
-    currentTopPos1 = 55;
+    currentBottomPos1 = 45;
   }
   requestAnimationFrame(moveEnemy1);
 
@@ -98,8 +103,8 @@ function moveEnemy1() {
 moveEnemy1();
 //moveSpeech1
 var speechBubble1 = document.getElementById('speech1');
-var currentLeftPosSpeech1 = 28;
-var currentTopPosSpeech1 = 53;
+var currentLeftPosSpeech1 = 29;
+var currentBottomPosSpeech1 = 46;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -109,15 +114,15 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 function moveSpeech1() {
   currentLeftPosSpeech1 += .04;
   speechBubble1.style.left = currentLeftPosSpeech1 + "%";
-  if (Math.abs(currentLeftPosSpeech1) >= 38) {
-    currentLeftPosSpeech1 = 28;
+  if (Math.abs(currentLeftPosSpeech1) >= 39) {
+    currentLeftPosSpeech1 = 29;
 
   }
-  currentTopPosSpeech1 += .04;
-  speechBubble1.style.top = currentTopPosSpeech1 + "%";
-  if (Math.abs(currentTopPosSpeech1) >= 63) {
+  currentBottomPosSpeech1 += .04;
+  speechBubble1.style.bottom = currentBottomPosSpeech1 + "%";
+  if (Math.abs(currentBottomPosSpeech1) >= 56) {
 
-    currentTopPosSpeech1 = 53;
+    currentBottomPosSpeech1 = 46;
   }
   requestAnimationFrame(moveSpeech1);
 
@@ -128,7 +133,8 @@ moveSpeech1();
 
 var theEnemy2 = document.getElementById('enemies2');
 var currentLeftPos2 = 15;
-var currentTopPos2 = 15;
+var currentBottomPos2 = 85;
+var currentRotation = "0deg";
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -141,12 +147,8 @@ function moveEnemy2() {
   if (Math.abs(currentLeftPos2) >= 37) {
     currentLeftPos2 = 15;
   }
-  // currentTopPos2 += .04;
-  // theEnemy2.style.top = currentTopPos2 + "%";
-  // if (Math.abs(currentTopPos2) >= 65) {
-  //
-  //   currentTopPos2 = 55;
-  // }
+  theEnemy2.style.bottom = currentBottomPos2 + "%";
+
   requestAnimationFrame(moveEnemy2);
 
 };
@@ -155,8 +157,8 @@ moveEnemy2();
 
 //speech2
 var speechBubble2 = document.getElementById('speech2');
-var currentLeftPosSpeech2 = 14;
-var currentTopPosSpeech2 = 15;
+var currentLeftPosSpeech2 = 16;
+var currentBottomPosSpeech2 = 15;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -166,15 +168,15 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 function moveSpeech2() {
   currentLeftPosSpeech2 += .04;
   speechBubble2.style.left = currentLeftPosSpeech2 + "%";
-  if (Math.abs(currentLeftPosSpeech2) >= 36) {
-    currentLeftPosSpeech2 = 14;
+  if (Math.abs(currentLeftPosSpeech2) >= 38) {
+    currentLeftPosSpeech2 = 16;
 
   }
-  // currentTopPosSpeech2 += .04;
-  // speechBubble2.style.top = currentTopPosSpeech2 + "%";
-  // if (Math.abs(currentTopPosSpeech2) >= 63) {
+  // currentBottomPosSpeech2 += .04;
+  // speechBubble2.style.bottom = currentBottomPosSpeech2 + "%";
+  // if (Math.abs(currentBottomPosSpeech2) >= 63) {
   //
-  //   currentTopPosSpeech2 = 53;
+  //   currentBottomPosSpeech2 = 53;
   // }
   requestAnimationFrame(moveSpeech2);
 
@@ -185,7 +187,7 @@ moveSpeech2();
 
 var theEnemy3 = document.getElementById('enemies3');
 var currentLeftPos3 = 80;
-var currentTopPos3 = 15;
+var currentBottomPos3 = 85;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -198,11 +200,11 @@ function moveEnemy3() {
   if (Math.abs(currentLeftPos3) <= 54) {
     currentLeftPos3 = 80;
   };
-  currentTopPos3 += .04;
-  theEnemy3.style.top = currentTopPos3 + "%";
-  if (Math.abs(currentTopPos3) <= 55) {
+  currentBottomPos3 += 0;
+  theEnemy3.style.bottom = currentBottomPos3 + "%";
+  if (Math.abs(currentBottomPos3) <= 55) {
 
-    currentTopPos3 = 15;
+    currentBottomPos3 = 85;
   }
   requestAnimationFrame(moveEnemy3);
 
@@ -212,8 +214,8 @@ moveEnemy3();
 
 //speech3
 var speechBubble3 = document.getElementById('speech3');
-var currentLeftPosSpeech3 = 81;
-var currentTopPosSpeech3 = 15;
+var currentLeftPosSpeech3 = 79;
+var currentBottomPosSpeech3 = 85;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -223,15 +225,15 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 function moveSpeech3() {
   currentLeftPosSpeech3 -= .04;
   speechBubble3.style.left = currentLeftPosSpeech3 + "%";
-  if (Math.abs(currentLeftPosSpeech3) <= 55) {
-    currentLeftPosSpeech3 = 81;
+  if (Math.abs(currentLeftPosSpeech3) <= 53) {
+    currentLeftPosSpeech3 = 79;
 
   }
-  currentTopPosSpeech3 += .04;
-  speechBubble3.style.top = currentTopPosSpeech3 + "%";
-  if (Math.abs(currentTopPosSpeech3) <= 63) {
+  currentBottomPosSpeech3 += 0;
+  speechBubble3.style.bottom = currentBottomPosSpeech3 + "%";
+  if (Math.abs(currentBottomPosSpeech3) <= 63) {
 
-    currentTopPosSpeech3 = 15;
+    currentBottomPosSpeech3 = 85;
   }
   requestAnimationFrame(moveSpeech3);
 
@@ -242,7 +244,7 @@ moveSpeech3();
 
 var theEnemy4 = document.getElementById('enemies4');
 var currentLeftPos4 = 80;
-var currentTopPos4 = 75;
+var currentBottomPos4 = 25;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -255,11 +257,11 @@ function moveEnemy4() {
   if (Math.abs(currentLeftPos4) <= 65) {
     currentLeftPos4 = 80;
   };
-  currentTopPos4 -= .04;
-  theEnemy4.style.top = currentTopPos4 + "%";
-  if (Math.abs(currentTopPos4) <= 55) {
+  currentBottomPos4 += .04;
+  theEnemy4.style.bottom = currentBottomPos4 + "%";
+  if (Math.abs(currentBottomPos4) >= 45) {
 
-    currentTopPos4 = 75;
+    currentBottomPos4 = 25;
   }
   requestAnimationFrame(moveEnemy4);
 
@@ -270,7 +272,7 @@ moveEnemy4();
 //speech4
 var speechBubble4 = document.getElementById('speech4');
 var currentLeftPosSpeech4 = 79;
-var currentTopPosSpeech4 = 74;
+var currentBottomPosSpeech4 = 26;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -284,10 +286,10 @@ function moveSpeech4() {
     currentLeftPosSpeech4 = 79;
 
   }
-  currentTopPosSpeech4 -= .04;
-  speechBubble4.style.top = currentTopPosSpeech4 + "%";
-  if (Math.abs(currentTopPosSpeech4) <= 54) {
-    currentTopPosSpeech4 = 74;
+  currentBottomPosSpeech4 += .04;
+  speechBubble4.style.bottom = currentBottomPosSpeech4 + "%";
+  if (Math.abs(currentBottomPosSpeech4) >= 46) {
+    currentBottomPosSpeech4 = 26;
   }
 
   requestAnimationFrame(moveSpeech4);
@@ -296,39 +298,73 @@ function moveSpeech4() {
 moveSpeech4();
 
 
+function collisionDetection1() {
+  // var enemiesFirst = document.getElementById('enemies1');
+  // var enBot = enemiesFirst.style.bottom;
+  // var enLeft = enemiesFirst.style.left;
+  for (var missile = 0; missile < missiles.length; missile = missile + 1) {
+    // if(missiles[missile].bottom <= enemiesFirst.top + '%')
 
-function collisionDetection1(){
-    var enemiesFirst = document.getElementById('enemies1');
-    for(var missile = 0; missile < missiles.length; missile = missile + 1){
-      if(
-        (missiles[missile].top <= enemiesFirst.top + '%') &&
-        (missiles[missile].top >= enemiesFirst.top + '%') &&
-        (missiles[missile].left >= enemiesFirst.left) &&
-        (missiles[missile].left <= enemiesFirst.left)
-      ){
-        console.log("hello");
-        enemiesFirst.style.display = "none";
-        // missiles.splice(missile, 1);
-      }
+    if (
+      ((missiles[missile].bottom + "%") >= theEnemy1.style.bottom) &&
+      ((missiles[missile].bottom + "%") <= (parseInt(theEnemy1.style.bottom, 10) + 2) + "%") &&
+      (missiles[missile].left >= parseInt(theEnemy1.style.left, 10) - 5) &&
+      (missiles[missile].left <= parseInt(theEnemy1.style.left, 10) - 2)
+    ) {
+      theEnemy1.style.display = "none";
+      missiles.splice(missile, 1);
+    } else if (
+      ((missiles[missile].bottom + "%") >= theEnemy2.style.bottom) &&
+      ((missiles[missile].bottom + "%") <= (parseInt(theEnemy2.style.bottom, 10) + 2) + "%") &&
+      (missiles[missile].left >= parseInt(theEnemy2.style.left, 10) - 5) &&
+      (missiles[missile].left <= parseInt(theEnemy2.style.left, 10) - 2)
+    ) {
+      theEnemy2.style.display = "none";
+        missiles.splice(missile, 1);
+    } else if (
+      ((missiles[missile].bottom + "%") >= theEnemy3.style.bottom) &&
+      ((missiles[missile].bottom + "%") <= (parseInt(theEnemy3.style.bottom, 10) + 2) + "%") &&
+      (missiles[missile].left >= parseInt(theEnemy3.style.left, 10) - 13) &&
+      (missiles[missile].left <= parseInt(theEnemy3.style.left, 10) - 9)
+    ) {
+      theEnemy3.style.display = "none";
+        missiles.splice(missile, 1);
+    } else if (
+    ((missiles[missile].bottom + "%") >= theEnemy4.style.bottom) &&
+    ((missiles[missile].bottom + "%") <= (parseInt(theEnemy4.style.bottom, 10) + 2) + "%") &&
+    (missiles[missile].left >= parseInt(theEnemy4.style.left, 10) - 16) &&
+    (missiles[missile].left <= parseInt(theEnemy4.style.left, 10) - 12)
+  ) {
+    theEnemy4.style.display = "none";
+      missiles.splice(missile, 1);
+  }
 }
 };
-
 
 function gameLoop() {
   setTimeout(gameLoop, 50),
     moveMissiles();
   drawMissiles();
   collisionDetection1();
+  rotationCalculator()
 };
 
 gameLoop();
 
 
-// Get the modal
-var modal = document.getElementById("myModal");
+let restartFun = document.getElementById('restart');
+
+//SPACE INVADERS END
+
+
+//MODALS SECTION
+
+// Get the modal 1
+var modal = document.getElementById("projectsModal1");
 
 // Get the button that opens the modal
 var btn = document.getElementById("enemies2");
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -347,5 +383,32 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+}
+
+// Get the modal 2
+var modal1 = document.getElementById("skillsModal1");
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("enemies1");
+
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("close1")[0];
+
+// When the user clicks on the button, open the modal
+btn1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function() {
+  modal1.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
   }
 }

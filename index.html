@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Rubik&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Rubik:wght@400;700&display=swap&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 
 </head>
 
@@ -21,31 +21,43 @@
       <li>Software consultation</li>
       <li>Solutions Implementation</li>
     </ul>
-    <p>
-      <bold>Contact Information:</bold>
-    </p>
+    <div class="contact">
+      <p>
+        <bold>Contact Information:</bold>
+      </p>
 
+      <div class="links">
+        <div class="linkedin">
+          <a href="https://www.linkedin.com/in/damian-lonel-48680b56/"><img class="contactLogos" src="images/002-linkedin.svg" alt="linkedin"></a>
+        </div>
+        <div class="gitHub">
+          <a href="https://github.com/dalbar82"><img class="contactLogos" src="images/004-githubWhite.svg" alt="github"></a>
+        </div>
+        <div class="email">
+          <a href="damian@playworkstudios.com.au"><img class="contactLogos" src="images/002-email.svg" alt="email"></a>
+        </div>
+      </div>
+      <p>Mob: 0438 344 386</p>
+      <h6>Site built with HTML, CSS & JavaScript</h6>
+    </div>
 
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <!-- The Project Modal -->
+    <div id="projectsModal1" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
         <div class="modalHead">
-        <h1 id="projectsH1">PROJECTS</h1>
-        <span class="close">&times;</span>
+          <h1 id="projectsH1">PROJECTS</h1>
+          <span class="close">&times;</span>
         </div>
 
         <div class="modalColumns">
 
 
-          <div class="jobForge">
+          <div class="jobForge col-1-project">
 
             <div class="imageBox">
-              <img id="SSimage" src="images/JFscreen.png" alt="Song Saviour image">
+              <img id="JFimage" src="images/JFscreen.png" alt="Song Saviour image">
             </div>
             <div class="textBox">
               <h2>JOB FORGE</h2>
@@ -62,7 +74,8 @@
             </div>
           </div>
 
-          <div class="songSaviour">
+
+          <div class="songSaviour col-2-project">
 
             <div class="imageBox">
               <img id="SSimage" src="images/SSscreen.png" alt="Song Saviour image">
@@ -70,22 +83,99 @@
             <div class="textBox">
               <h2>SONG SAVIOUR</h2>
               <p>This is a Marketplace app built to buy and sell songs.</p>
-              <p>Not to be confused with a streaming service, with Song Saviour, song writers/producers/composers have the ability to sell their works outright to an artist looking for ‘original’ material.
-Either purchase the full copyright and IP of a song, or sign into to a royalty share contract. </p>
+              <p>Not to be confused with a streaming service, with Song Saviour, writers/producers/composers have the ability to sell their works outright to an artist looking for ‘original’ material.
+                Either purchase the full copyright and IP of a song, or sign into to a royalty share contract. </p>
               <p><em>Built using Ruby, Ruby on Rails, HTML, CSS and JS</em></p>
             </div>
           </div>
 
+          <div class="smallProjects col-3-project">
+
+            <div class="gDesign">
+              <img class="spImages" src="images/gdesign-01.png" alt="Graphic Design">
+              <div class="gDesignText">
+                <h3>GRAPHIC DESIGN</h3>
+                <p>Throughout my career in the print industry I have not only dealt with 10s of thousands of artworks, I have also created a few myself using Illustrator, Photoshop or Sketchup.</p>
+              </div>
+            </div>
+            <div class="doco">
+              <img class="spImages" src="images/doco.png" alt="">
+              <div class="docoText">
+                <h3>SOLDIER SETTLEMENT DOCUMENTARY</h3>
+                <p>Based on the failed Soldier Settlement scheme post WWI, I filmed and edited this documentary for a museum installation.</p>
+              </div>
+            </div>
+            <div class="exhibitions">
+              <img class="spImages" src="images/consc-01.png" alt="">
+              <div class="docoText">
+                <h3>EXHIBITION FITOUTS</h3>
+                <p>An extensive list of fitouts project managed from concept to completion. Including graphic production, AV, carpentry, logistics and much more.</p>
+              </div>
+            </div>
+
         </div>
       </div>
-
     </div>
+
+  </div>
+  <!-- The Skills Modal -->
+  <div id="skillsModal1" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content1">
+
+      <div class="modalHead1">
+        <h1 id="projectsH1">SKILLS</h1>
+        <span class="close1">&times;</span>
+      </div>
+
+      <div class="skillsContentContainer">
+
+        <img id="starsImg" src="images/stars.jpg" alt="">
+        <div class="imgOverlay"></div>
+      </div>
+      <div class="skillsColumns">
+        <div class="icons col-1-skills">
+          <h3>Technical:</h3>
+          <img class="skillIcons" src="images/htmllogo-01.png" alt="">
+          <img class="skillIcons" src="images/csslogo-01.png" alt="">
+          <img class="skillIcons" src="images/jslogo-01.png" alt="">
+          <img class="skillIcons" src="images/nodejslogo-01.png" alt="">
+          <img class="skillIcons" src="images/react.png" alt="">
+          <img class="skillIcons" src="images/rubylogo.svg" alt="">
+          <img class="skillIcons" src="images/robyonrailslogo.png" alt="">
+          <img class="skillIcons" src="images/004-githubWhite.svg" alt="">
+          <img class="skillIcons" src="images/heroku.png" alt="">
+          <img class="skillIcons" src="images/001-photoshop.svg" alt="">
+          <img class="skillIcons" src="images/002-illustrator.svg" alt="">
+          <img class="skillIcons" src="images/003-git.svg" alt="">
+          <img class="skillIcons" src="images/microsoftlogo.png" alt="">
+          <img class="skillIcons" src="images/filemaker.svg" alt="">
+          <img class="skillIcons" src="images/knacklogo-01.png" alt="">
+          <img class="skillIcons" src="images/005-premiere.svg" alt="">
+          <img class="skillIcons" src="images/logicxlogo-01.png" alt="">
+        </div>
+        <div class="personal col-2-skills">
+          <h3>Personal:</h3>
+          <ul class="skillsUl">
+            <li>Passionate, empathetic with an entrepreneurial spirit.</li>
+            <li>Problem solver.</li>
+            <li>A decision maker who thrives under pressure.</li>
+            <li>A team player who can also work autonomously.</li>
+            <li>I enjoy a laugh and believe a happy workplace is a big key to a successful worplace.</li>
+            <li>I have a strong moral compass and believe in kindness and respect.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 
   <div id="gamesWindow" class="gameWindow" style="background-image: url('https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');">
     <div class="topTextContainer">
       <h3 class="click">Click to follow link</h3>
+      <h3 id="restart" onClick="window.location.reload();">Restart</h3>
       <h3 class="spacebar">Spacebar to fire!</h3>
     </div>
 
@@ -101,12 +191,12 @@ Either purchase the full copyright and IP of a song, or sign into to a royalty s
 
     <div class="enemy2">
       <div id="enemies2"></div>
-      <img id="speech2" src="images/pixel-speech-bubble (2).png" alt="">
+      <img id="speech2" src="images/pixel-speech-bubble (3).png" alt="">
     </div>
 
     <div class="enemy3">
       <div id="enemies3"></div>
-      <img id="speech3" src="images/pixel-speech-bubble (3).png" alt="">
+      <img id="speech3" src="images/pixel-speech-bubble (2).png" alt="">
     </div>
 
     <div class="enemy4">
