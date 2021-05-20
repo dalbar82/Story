@@ -214,7 +214,7 @@ moveEnemy3();
 
 //speech3
 var speechBubble3 = document.getElementById('speech3');
-var currentLeftPosSpeech3 = 79;
+var currentLeftPosSpeech3 = 77;
 var currentBottomPosSpeech3 = 85;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
@@ -225,8 +225,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 function moveSpeech3() {
   currentLeftPosSpeech3 -= .04;
   speechBubble3.style.left = currentLeftPosSpeech3 + "%";
-  if (Math.abs(currentLeftPosSpeech3) <= 53) {
-    currentLeftPosSpeech3 = 79;
+  if (Math.abs(currentLeftPosSpeech3) <= 51) {
+    currentLeftPosSpeech3 = 77;
 
   }
   currentBottomPosSpeech3 += 0;
@@ -271,7 +271,7 @@ moveEnemy4();
 
 //speech4
 var speechBubble4 = document.getElementById('speech4');
-var currentLeftPosSpeech4 = 79;
+var currentLeftPosSpeech4 = 77;
 var currentBottomPosSpeech4 = 26;
 
 var requestAnimationFrame = window.requestAnimationFrame ||
@@ -282,8 +282,8 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 function moveSpeech4() {
   currentLeftPosSpeech4 -= .04;
   speechBubble4.style.left = currentLeftPosSpeech4 + "%";
-  if (Math.abs(currentLeftPosSpeech4) <= 64) {
-    currentLeftPosSpeech4 = 79;
+  if (Math.abs(currentLeftPosSpeech4) <= 62) {
+    currentLeftPosSpeech4 = 77;
 
   }
   currentBottomPosSpeech4 += .04;
@@ -410,5 +410,59 @@ span1.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal1) {
     modal1.style.display = "none";
+  }
+}
+
+// Get the modal 3
+var modal3 = document.getElementById("skillsModal3");
+
+// Get the button that opens the modal
+var btn3 = document.getElementById("enemies3");
+
+
+// Get the <span> element that closes the modal
+var span3 = document.getElementsByClassName("close3")[0];
+
+// When the user clicks on the button, open the modal
+btn3.onclick = function() {
+  modal3.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function() {
+  modal3.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
+}
+
+// Get the modal 4
+var modal4 = document.getElementById("skillsModal4");
+
+// Get the button that opens the modal
+var btn4 = document.getElementById("enemies4");
+
+
+// Get the <span> element that closes the modal
+var span4 = document.getElementsByClassName("close4")[0];
+
+// When the user clicks on the button, open the modal
+btn4.onclick = function() {
+  modal4.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span4.onclick = function() {
+  modal4.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal4) {
+    modal4.style.display = "none";
   }
 }
