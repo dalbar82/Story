@@ -30,13 +30,12 @@ a:hover {
 }
 
 .contact {
-  font-family: poppins;
   text-align: left;
-  padding-left: 2.8vw;
-  padding-top: 5vh;
-  font-size: 1.2vw;
-  color: #aeaeae;
-  font-family: 'Rubik';
+    padding-left: 2.8vw;
+    padding-top: 1vh;
+    font-size: 1vw;
+    color: #aeaeae;
+    font-family: 'Rubik';
 }
 
 .navList {
@@ -45,6 +44,7 @@ a:hover {
   font-size: 0.8em;
   line-height: 4em;
   padding-left: 4vw;
+  font-weight: 600;
 }
 
 #myName {
@@ -58,12 +58,19 @@ a:hover {
   border-radius: 50px;
 }
 
-.links {
+.links a{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  width: 12vw;
+      text-decoration: none;
+      color: white;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+  font-size: .8vw;
+      margin-top: 15px;
+}
+.links img{
+  margin-right:5px;
+
 }
 
 .contactLogos {
@@ -444,7 +451,7 @@ a:hover {
 
 .col-1-skills {
   width: 40%;
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
 .col-2-skills {
@@ -456,11 +463,12 @@ a:hover {
 
 .skillsUl {
   line-height: 6vh;
+  padding-inline-start: 15px;
 }
 
 .skillIcons {
-  width: 2vw;
-  margin: 1vw;
+  width: 2.7vw;
+margin: .8vw;
 }
 
 /* Modal History Content/Box */
@@ -752,8 +760,8 @@ a:hover {
     font-family: 'poppins';
 }
 .aboutImages{
-  width: 10vw;
-height: 20vh;
+  height: 10vw;
+
 border: 5px solid white;
 margin-right: 15px;
 object-fit: fill;
@@ -775,5 +783,5 @@ object-fit: fill;
 }
 .cfunk{
   display: flex;
-
+margin-top:10px;
 }
