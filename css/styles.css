@@ -106,6 +106,7 @@ a:hover {
   font-family: 'rubik mono one';
   position: relative;
   top: 1%;
+  font-size: 1vw;
 }
 
 #restart:hover {
