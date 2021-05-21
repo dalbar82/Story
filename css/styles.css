@@ -111,6 +111,7 @@ a:hover {
 
 #restart:hover {
   color: red;
+  cursor: pointer;
 }
 
 #rocket {
@@ -148,6 +149,7 @@ a:hover {
   left: 27%;
   bottom: 45%;
   opacity: 1;
+  cursor: pointer;
 }
 
 #speech1 {
@@ -171,6 +173,7 @@ a:hover {
   /* left: 15%;*/
   bottom: 85%;
   transform: rotate(0deg);
+  cursor: pointer;
 }
 
 #speech2 {
@@ -193,6 +196,7 @@ a:hover {
   position: absolute;
   left: 80%;
   bottom: 85%;
+  cursor: pointer;
 }
 
 #speech3 {
@@ -215,6 +219,7 @@ a:hover {
   position: absolute;
   left: 80%;
   bottom: 15%;
+  cursor: pointer;
 }
 
 #speech4 {
